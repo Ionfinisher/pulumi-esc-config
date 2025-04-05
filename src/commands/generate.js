@@ -9,7 +9,7 @@ const { greenBright, redBright } = chalk;
 // Function to generate the configuration
 export async function generateConfig(env, proj, format, output) {
   // Fetch ORG from environment variables
-  const org = process.env.ORG;
+  const org = process.env.PULUMI_ORG;
   if (!org) {
     console.error(redBright("ORG environment variable is not set"));
     console.log(
