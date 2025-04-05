@@ -7,6 +7,7 @@
     "generate": "node src/index.js"
   },
   "dependencies": {
+    "@pulumi/esc-sdk": "^0.12.1",
     "chalk": "^4.1.2",
     "clear": "^0.1.0",
     "dotenv": "^16.4.7",
