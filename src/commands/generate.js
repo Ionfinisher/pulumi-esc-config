@@ -64,19 +64,3 @@ export async function generateConfig(env, proj, format, output) {
     process.exit(1);
   }
 }
-
-// Helper function to safely stringify values for .env format
-// function envStringify(value) {
-//   if (typeof value === "string") {
-//     // Escape quotes and wrap in quotes if it contains spaces
-//     if (value.includes(" ") || value.includes("\n") || value.includes("\t")) {
-//       return `"${value.replace(/"/g, '\\"')}"`;
-//     }
-//     return value;
-//   }
-//   // Convert objects, arrays, etc. to JSON strings
-//   if (typeof value === "object" && value !== null) {
-//     return JSON.stringify(value);
-//   }
-//   return String(value);
-// }
