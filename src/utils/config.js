@@ -1,14 +1,13 @@
+import minimist from "minimist";
+
 export function parseConfigVars() {
-  const npmVars = {};
-  Object.keys(process.env).forEach((key) => {
-    if (key.startsWith("npm_config_")) {
-      // Remove the npm_config_ prefix
-      const varName = key.replace("npm_config_", "");
-      // Skip internal npm config vars
-      if (!varName.includes("_") && !varName.match(/^[0-9]/)) {
-        npmVars[varName] = process.env[key];
-      }
-    }
-  });
-  return npmVars;
+  const args = minimist(process.argv.slice(2));
+
+  // Command line args take precedence
+  return {
+    proj: args.proj || args.p,
+    env: args.env || args.e,
+    type: args.type || args.t,
+    output: args.output || args.o,
+  };
 }

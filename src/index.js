@@ -26,7 +26,7 @@ export function main() {
   console.log("Configuration variables:", configVars);
 
   // Check if the required variables are set
-  const requiredVars = ["proj", "env", "format", "output"];
+  const requiredVars = ["proj", "env", "type", "output"];
   const missingVars = requiredVars.filter((varName) => !configVars[varName]);
   if (missingVars.length > 0) {
     console.error(
