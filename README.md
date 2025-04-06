@@ -26,7 +26,7 @@ The esc-config tool is a command-line interface (CLI) designed to fetch secrets 
 
 ## Installation
 
-### Setup Guide (You can skip 1 to 3 if you already have an account)
+### Setup Guide (You can [skip](#4-login-to-pulumi-with-the-esc-cli) 1 to 3 if you already have an account)
 
 ### 1. Create a Pulumi Account
 
