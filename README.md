@@ -2,6 +2,17 @@
 
 The esc-config tool is a command-line interface (CLI) designed to fetch secrets and configurations from Pulumi ESC and generate configuration files in formats like .env, JSON, or YAML. This documentation will guide you through setting up and using the tool effectively.
 
+# Table of Content
+
+- :clapper: [Demo](#pulumi-esc-demo)
+- :rocket: [Getting Started](#getting-started-with-pulumi-esc)
+- :blue_book: [Documentation](https://pulumi.com/docs/pulumi-cloud/esc)
+- :hammer_and_wrench: [How It Works](#how-pulumi-esc-works)
+- :white_check_mark: [Features](#pulumi-esc-features)
+- :compass: [Roadmap](#resources)
+- :busts_in_silhouette: [Community](#resources)
+- :computer: [Resources](#resources)
+
 ## Features
 
 - Connects to Pulumi ESC to fetch secrets and configurations for a specified environment.
@@ -105,6 +116,54 @@ npm run generate -- -p myproject -e staging -t yaml -o config
 - json: Generates a JSON file
 
 - yaml or yml: Generates a YAML file
+
+### Integration with Frameworks
+
+After generating your configuration files, you'll need to use them in your application. Here are examples for popular frameworks and languages:
+
+- Node.js (JavaScript/TypeScript)
+
+For json files:
+
+```js
+// Load configuration from JSON file
+import fs from "fs";
+const config = JSON.parse(fs.readFileSync("./config.json", "utf8"));
+
+// Access variables
+const apiKey = config.API_KEY;
+console.log(`Using API key: ${apiKey}`);
+```
+
+- Python
+  For .env files using python-dotenv:
+
+```python
+# Load environment variables from .env file
+from dotenv import load_dotenv
+load_dotenv('.env.dev')
+
+# Access variables
+import os
+api_key = os.getenv('API_KEY')
+print(f"Using API key: {api_key}")
+```
+
+- Java
+  For properties files (yaml):
+
+```java
+// Load properties file
+import java.util.Properties;
+import java.io.FileInputStream;
+
+Properties props = new Properties();
+props.load(new FileInputStream("config.properties"));
+
+// Access variables
+String apiKey = props.getProperty("API_KEY");
+System.out.println("Using API key: " + apiKey);
+```
 
 ### Notes
 

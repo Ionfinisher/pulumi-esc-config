@@ -21,7 +21,7 @@ export async function generateConfig(env, proj, format, output) {
 
   try {
     const secrets = await getSecrets(org, proj, env);
-    console.log(greenBright("Secrets fetched successfully!"));
+    console.log(greenBright("⚡️ Secrets fetched successfully!"));
 
     // Create output directory if it doesn't exist
     if (!fs.existsSync(output)) {
