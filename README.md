@@ -4,14 +4,12 @@ The esc-config tool is a command-line interface (CLI) designed to fetch secrets 
 
 # Table of Content
 
-- :clapper: [Demo](#pulumi-esc-demo)
-- :rocket: [Getting Started](#getting-started-with-pulumi-esc)
-- :blue_book: [Documentation](https://pulumi.com/docs/pulumi-cloud/esc)
-- :hammer_and_wrench: [How It Works](#how-pulumi-esc-works)
-- :white_check_mark: [Features](#pulumi-esc-features)
-- :compass: [Roadmap](#resources)
-- :busts_in_silhouette: [Community](#resources)
-- :computer: [Resources](#resources)
+- 🧱 [Features](#features)
+- 🚀 [Getting Started](#getting-started)
+- 📦 [Installation](#installation)
+- 🛠 [Best Practices](#best-practices)
+- 📃 [License](#license)
+- 👤 [Author](#resources)
 
 ## Features
 
@@ -149,22 +147,6 @@ api_key = os.getenv('API_KEY')
 print(f"Using API key: {api_key}")
 ```
 
-- Java
-  For properties files (yaml):
-
-```java
-// Load properties file
-import java.util.Properties;
-import java.io.FileInputStream;
-
-Properties props = new Properties();
-props.load(new FileInputStream("config.properties"));
-
-// Access variables
-String apiKey = props.getProperty("API_KEY");
-System.out.println("Using API key: " + apiKey);
-```
-
 ### Notes
 
 - The output path can be a directory or a file
@@ -172,6 +154,21 @@ System.out.println("Using API key: " + apiKey);
 - When specifying a directory, a file will be created with a name based on your project and environment
 
 - All commands require the PULUMI_ORG environment variable to be set in your .env file
+
+## Best Practices
+
+When working with Pulumi ESC for secrets management, follow these best practices:
+
+1. Secret Management
+   Rotate Secrets Regularly: Schedule regular rotation of secrets to minimize the impact of potential breaches.
+
+2. Use Least Privilege: Grant only the necessary access permissions to secrets, limiting the scope of potential damage.
+
+3. Avoid Hardcoding: Never hardcode secrets in your application code or commit them to version control.
+
+4. Environment Isolation: Use separate environments (dev, staging, prod) with different secret values for proper isolation.
+
+5. For more information about Pulumi ESC concepts and best practices, refer to the [official documentation](https://www.pulumi.com/docs/pulumi-cloud/esc/concepts/).
 
 ## License
 
