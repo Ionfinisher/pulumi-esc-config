@@ -46,7 +46,7 @@ The esc-config tool is a command-line interface (CLI) designed to fetch secrets 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Ionfinisher/intelligrid.git
+git clone https://github.com/Ionfinisher/pulumi-esc-config.git
 cd pulumi-esc-config
 ```
 
